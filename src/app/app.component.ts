@@ -33,16 +33,6 @@ import { DatospeliculaService } from './providers/datospelicula.service'
 
 export class AppComponent {
   title = 'mpa'; 
-  //Atributo con el tipo de dato de la interfaz
-   public data : Pelicula[] = [];
-   //Inyección de dependencia del servicio
-   constructor(private dataProvider: DatospeliculaService) { }
-  //Ejecución de la petición y suscripción de la respuesta
-   ngOnInit() {
-    this.dataProvider.getResponse().subscribe((response) => { 
-      let dataArray = (response as Pelicula[]); 
-      this.data = dataArray.slice(0,10);
-    })
-  }
+  
 }
 
