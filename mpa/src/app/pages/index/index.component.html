@@ -3,6 +3,7 @@
     <div class="row px-xl-5">
         <div class="col-lg-8">
             <div id="header-carousel" class="carousel slide carousel-fade mb-30 mb-lg-0" data-ride="carousel">
+                
                 <ol class="carousel-indicators">
                     <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
                     <li data-target="#header-carousel" data-slide-to="1"></li>
@@ -774,3 +775,20 @@
     </div>
   </div>
   <!-- Vendor End -->
+
+  <!-- Tabla con datos -->
+  <table>
+    <tbody>
+        @for (datum of data; track datum.id) {
+        <tr>
+            <th> {{ datum[ "id" ] }} </th>
+            <td> {{ datum[ "original_title" ] }} </td>
+            <td> {{ datum[ "release_date" ] }} </td>
+        </tr>
+        } @empty {
+        <tr>
+            <td colspan="4" class="text-center">Aún no hay datos</td>
+        </tr>
+        }
+    </tbody>
+</table>
